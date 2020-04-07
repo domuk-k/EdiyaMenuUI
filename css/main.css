@@ -46,6 +46,7 @@ a {
 header {
   border-bottom: solid 1px rgb(207, 207, 207);
   width: 100vw;
+  z-index: 400;
 }
 /* 로고 */
 h1 {
