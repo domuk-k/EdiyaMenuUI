@@ -24,7 +24,20 @@ ol {
   padding: 0;
   list-style: none;
 }
+::-moz-selection {
+  background: #233d84;
+  color: #ffffff;
+}
 
+::selection {
+  background: #233d84;
+  color: #ffffff;
+}
+
+[role='button'],
+button {
+  cursor: pointer;
+}
 /* 공통 모듈 */
 a {
   text-decoration: none;
@@ -110,7 +123,7 @@ h1 a {
 
   font-size: 1.4em;
 
-  background-color: rgba(9, 0, 61, 0.856);
+  background: rgba(20, 24, 44, 0.9);
   width: 99vw;
   height: 100vh;
   z-index: 999;
@@ -186,7 +199,7 @@ h1 a {
   position: relative;
 }
 .menuList li:last-child {
-  flex: 0 1 300px;
+  flex: 1 1 300px;
   margin: 10px;
 
   position: relative;
