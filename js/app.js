@@ -1,28 +1,42 @@
-const btns = document.querySelectorAll('.specification >button');
-const menu_cards = document.querySelectorAll('.menu_card');
+const specEnters = document.querySelectorAll('.menuItem');
+const specExits = document.querySelectorAll('.menuDetail > button');
 
-Array.from(btns).forEach(btn => btn.addEventListener('click', closeWindow));
-function closeWindow() {
-  this.parentNode.classList.remove('open_spec');
-}
-
-Array.from(menu_cards).forEach(card =>
-  card.addEventListener('click', openWindow),
+Array.from(specEnters).forEach(button =>
+  button.addEventListener('click', openWindow, true),
 );
-function openWindow(e) {
+Array.from(specExits).forEach(button =>
+  button.addEventListener('click', closeWindow, true),
+);
+function openWindow() {
+  console.log('open');
+  const target = this.parentElement.querySelector('.menuDetail');
+  target.classList.add('isOpen');
+  target.style = 'user-select: none';
+}
+function closeWindow(e) {
+  console.log('close');
   e.preventDefault();
-  this.parentNode.children[0].classList.add('open_spec');
+  // setTimeout(() => {
+  //   this.parentElement.classList.remove('open_spec');
+  // }, 0);
+  this.parentElement.classList.remove('isOpen');
 }
 
-const burgerBtn = document.getElementsByClassName('burgerBars')[0];
-const siteMenu = document.getElementById('sideBar');
+const navigation = document.querySelector('.navigation');
+const navClBtn = document.querySelector('#navClBtn');
+const navOpBtn = document.querySelector('.burgerButton');
+navOpBtn.addEventListener('click', navOpen);
+navClBtn.addEventListener('click', navClose);
 
-burgerBtn.addEventListener('click', () => {
-  siteMenu.style = 'right: 0px;';
-});
+function navOpen() {
+  console.log('open');
+  navigation.classList.add('isActive');
+}
+function navClose() {
+  console.log('close');
+  navigation.classList.remove('isActive');
+}
 
-const exitBtn = document.querySelector('.siteMenu>label');
-
-exitBtn.addEventListener('click', () => {
-  siteMenu.style = 'right: -105%';
-});
+// Array.from(btns).forEach(btn => btn.addEventListener('click', closeWindow));
+// burgerBtn.addEventListener('click', () => {
+// });

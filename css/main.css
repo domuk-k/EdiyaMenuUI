@@ -1,257 +1,342 @@
+/* 접근성 클래스 */
+.a11yHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+
+  clip: rect(0, 0, 0, 0);
+  clip-path: circle(0, 0, 0);
+}
+/* 초기화 */
+body {
+  overflow-x: hidden;
+  font-size: 12px;
+}
+
+body * {
+  font-family: 'Noto Sans KR', sans-serif;
+  box-sizing: border-box;
+  outline: none;
+}
+ul,
+ol {
+  padding: 0;
+  list-style: none;
+}
+
+/* 공통 모듈 */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* 바디 */
+
+/* 헤더 영역 */
+/* 로고 영역 */
+.header {
+  position: sticky;
+
+  z-index: 100;
+  width: 100vw;
+  background-color: rgba(255, 255, 255, 0.425);
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
+
+  border-bottom: solid 1px rgb(207, 207, 207);
+  margin-top: 0;
+
+  top: 0;
+}
+h1 {
+  padding: 0, 0;
+}
+h1 a {
+  margin: 0;
+  padding: 0;
+
+  width: 320px;
+  height: 75px;
+
+  overflow: hidden;
+  white-space: nowrap;
+  text-indent: 200%;
+
+  display: block;
+  background-image: url(../assets/logo.svg);
+  background-repeat: no-repeat;
+  background-size: 70%;
+  background-position: 25px 26px;
+}
+
+/* 버거 버튼 */
+.burgerButton {
+  position: absolute;
+  right: 0px;
+  top: 0;
+  padding: 38px 40px 38px;
+
+  background-color: rgba(216, 191, 216, 0);
+  border: 0;
+}
+.burgerButton:hover {
+  background-color: rgba(211, 211, 211, 0.239);
+}
+.burgerButton span {
+  position: absolute;
+  display: block;
+
+  width: 27px;
+  height: 4px;
+
+  left: calc(50% / 2 + 6px);
+  background: #616161;
+}
+
+.burgerButton span:nth-child(1) {
+  top: calc(50% - 4px / 2 - 10px);
+}
+.burgerButton span:nth-child(2) {
+  top: calc(50% - 4px / 2);
+}
+.burgerButton span:nth-child(3) {
+  top: calc(50% - 4px / 2 + 10px);
+}
+
+/* 네비게이션 */
+.navigation {
+  position: fixed;
+  top: 0;
+
+  font-size: 1.4em;
+
+  background-color: rgba(9, 0, 61, 0.856);
+  width: 99vw;
+  height: 100vh;
+  z-index: 999;
+
+  right: -105%;
+  transition: all 0.4s ease-in-out;
+
+  backdrop-filter: blur(2px);
+}
+
+.navigation .navList {
+  margin-top: 80px;
+  margin-left: 100px;
+}
+.navigation .navSubList {
+}
+.navigation .navSubList li {
+  color: white;
+  margin: 20px;
+}
+.navigation .navSubList li::before {
+  content: '🎇';
+}
+.navigation button {
+  border: none;
+  background: none;
+  color: white;
+
+  font-size: 35px;
+  font-family: 'Noto Sans KR';
+
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 0 10px;
+  transition: size 0.5s ease-in-out;
+}
+.navigation button:hover {
+  transform: scale(1.1);
+}
+.navigation h3 {
+  font-size: 20px;
+  padding: 15px;
+  color: white;
+}
+.navigation > ul > li {
+  padding-top: 20px;
+  font-size: 20px;
+  border-bottom: 0.5px solid rgba(245, 244, 251, 0.3);
+}
+
+/* 메인 영역 */
+.main {
+}
+.mainWrapper {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+/* 메뉴 리스트 */
+.menuList {
+  margin-top: 15px;
+
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+.menuList li {
+  flex: 1 1 300px;
+  margin: 10px;
+
+  position: relative;
+}
+.menuList li:last-child {
+  flex: 0 1 300px;
+  margin: 10px;
+
+  position: relative;
+}
+
+.menuList a {
+  display: block;
+}
+
+.menuList figure {
+  display: block;
+  background-color: rgba(214, 214, 214, 0.267);
+  text-align: center;
+}
+.menuList figcaption {
+  padding: 30px 0;
+}
+.menuItem {
+  /* user-select: none; */
+}
+.menuItem img {
+  transform: scale(0.8);
+  transition: all 0.4s ease;
+}
+.menuItem:hover img {
+  transform: scale(0.9);
+}
+/* 메뉴 디테일 */
+.menuDetail {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 20px;
+  height: 100%;
+
+  background-color: rgba(255, 255, 255, 0.507);
+  border: 1px rgb(235, 235, 235) solid;
+  z-index: -1;
+  opacity: 0;
+
+  transition: all 0.5s ease-in-out;
+}
+
+.menuDetail div {
+  font-size: 1.2em;
+  margin-top: 40px;
+}
+.menuDetail span {
+  font-size: 0.8em;
+  display: block;
+  color: rgb(144, 144, 144);
+
+  padding-bottom: 20px;
+}
+.menuDetail p {
+  border-top: 2px solid;
+  padding: 20px 0;
+}
+.menuDetail dl {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+
+  background-color: rgb(248, 248, 248);
+  padding: 20px 30px;
+  columns: 2;
+  column-rule: rgb(182, 182, 182) 1px solid;
+  line-height: 1.8em;
+  font-size: 0.9em;
+}
+
+.menuDetail dt {
+  float: left;
+  min-width: 47%;
+}
+.menuDetail dd {
+  text-align: left;
+  float: right;
+  min-width: 40%;
+}
+
+.closeDetail {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+
+  border: none;
+  width: 50px;
+  height: 50px;
+
+  background-color: transparent;
+}
+.closeDetail:hover {
+  background-color: rgb(246, 246, 246);
+}
+.closeDetail img {
+  transform: scale(1.5);
+}
+
+/* 동작 클래스 */
+.isActive {
+  right: 0%;
+}
+.isOpen {
+  opacity: 1;
+  z-index: 90;
+}
+
 /* 애니메이션 */
+
 @keyframes init_slip {
   form {
-    opacity: 0;
   }
   to {
     transform: none;
     opacity: 1;
   }
 }
-header {
-  transform: translateY(-20em);
-  animation: init_slip 0.25s ease-in-out 0.05s 1 forwards;
-}
-h1 img {
-  transform: translateX(-20em);
-  animation: init_slip 0.3s ease-in-out 0.1s 1 forwards;
-}
-.burgerBars {
-  transform: translateX(20em);
-  animation: init_slip 0.3s ease-in-out 0.1s 1 forwards;
-}
-/* 글로벌 */
-body {
-  overflow-x: hidden;
-}
-body * {
-  box-sizing: border-box;
-  outline: none;
-}
 
-a {
-  text-decoration: none;
-  color: inherit;
-}
-/* 접근성 모듈 */
-.a11yHidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  clip-path: circle(0, 0, 0);
-}
-/* 헤더 */
-header {
-  border-bottom: solid 1px rgb(207, 207, 207);
-  width: 100vw;
-  z-index: 400;
-}
-/* 로고 */
-h1 {
-  position: relative;
-
-  overflow: hidden;
-  white-space: nowrap;
-  width: 65%;
-
-  padding: 26px 0;
-}
 h1 a {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 25px;
-  background-color: white;
+  opacity: 0;
+  transform: translateX(-20em);
+  animation: init_slip 0.55s ease-in-out 0.3s 1 forwards;
 }
-h1 img {
-  /* background-color: rgb(255, 255, 255); */
-  width: 100%;
-  max-width: 210px;
+.burgerButton {
+  opacity: 0;
+  transform: translateX(20em);
+  animation: init_slip 0.55s ease-in-out 0.3s 1 forwards;
 }
-
-/* 네비게이션 */
-/* 햄버거 메뉴 */
-.navigation__wrapper {
-  background-color: rgba(30, 143, 255, 0.24);
-}
-.burgerBars {
-  padding: 25px;
-  position: absolute;
-  right: 0;
-  top: 0;
-
-  cursor: pointer;
-}
-.navigation input {
-  display: none;
-}
-/* 패티와 빵 */
-.burgerBars div {
-  background-color: dimgray;
-  width: 25px;
-  height: 3px;
-  margin-bottom: 5px;
+.header {
+  opacity: 0;
+  transform: translateY(-20em);
+  animation: init_slip 0.65s ease-in-out 0s 1 forwards;
 }
 
-/* 네비게이션 오픈 */
-.siteMenu {
-  position: fixed;
-  z-index: 1;
-  /* 애초에 fixed 일 필요가 없어, 스크롤이 내려가면안되니까 */
-  top: 0;
-  right: -100vw;
-
-  background-color: rgba(33, 40, 60, 0.918);
-  width: 100%;
-  height: 100vh;
-  /* 사이트메뉴 가리기 */
-}
-/* noscript 일때 쓰는 style태그 안에 css */
-/* .entrance:checked + .siteMenu {
-  right: 0;
-  transition: 1s ease-in-out;
-}
-.exit:checked + .siteMenu {
-  right: -100vw;
-  transition: 1s ease-in-out;
-} */
-/*  */
-.siteMenu ul {
-  font-size: 12px;
-  margin-top: 10%;
-}
-.siteMenu li {
-  border-bottom: 1px rgb(47, 47, 219) solid;
-  padding: 15px;
-  color: white;
-}
-.siteMenu li:hover {
-  transition: 0.2s ease-in-out;
-  background-color: rgb(60, 81, 139);
-}
-.siteMenu a {
-}
-.siteMenu label {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  border: 0;
-  padding: 8px 14px;
-  font-size: 1.6em;
-  color: white;
-  background-color: transparent;
-  /* background-image: url('./assets/button/navIcon.png'); */
-  background-position: -70px 0;
-  transition: 0.3s ease-in-out;
+.menuList li:nth-child(1),
+.menuList li:nth-child(2),
+.menuList li:nth-child(3),
+.menuList li:nth-child(4) {
+  opacity: 0;
+  transform: translateY(1.1em);
+  animation: init_slip 0.55s ease-in-out 0.7s 1 forwards;
 }
 
-.siteMenu label:hover {
-  transform: scale(1.3);
+.menuList li:nth-child(5),
+.menuList li:nth-child(6),
+.menuList li:nth-child(7),
+.menuList li:nth-child(8) {
+  opacity: 0;
+  transform: translateY(1.1em);
+  animation: init_slip 0.55s ease-in-out 0.9s 1 forwards;
 }
-/* 메인 음료 콘텐츠 */
-
-.main__wrapper {
-  margin: auto;
-  max-width: 840px;
-  margin-top: 15px;
-}
-.main__wrapper ol {
-  display: flex;
-  flex-flow: row wrap;
-}
-.main__wrapper li {
-  flex: 1 1 300px;
-}
-main li {
-}
-.main__wrapper li {
-  display: inline-block;
-}
-
-.menu_item {
-  text-align: center;
-  position: relative;
-  padding: 10px;
-}
-/* 음료 스펙 */
-.specification {
-  position: absolute;
-  top: 0;
-  left: 0;
-  /* 이게뭘까 */
-  height: 95%;
-
-  text-align: left;
-  margin: 10px;
-  padding: 20px;
-
-  background-color: rgba(255, 255, 255, 0.411);
-  border: 1px lightgray solid;
-
-  display: none;
-}
-
-.open_spec {
-  display: block;
-  transition: 3s ease-in-out;
-}
-
-.specification h3 {
-  font-size: 1.2em;
-  line-height: 1.1em;
-  margin-top: 30px;
-}
-.specification h3 div {
-  font-size: 0.7em;
-  color: dimgray;
-}
-.specification p {
-  border-top: 2px solid;
-  padding: 20px 10px 20px 0;
-
-  margin-top: 20px;
-  margin-bottom: 70px;
-}
-.specification button {
-  position: absolute;
-  top: 0;
-  right: 0;
-  border: none;
-  background-color: transparent;
-  padding: 8px 18px;
-  font-size: 2em;
-  font-weight: lighter;
-}
-.specification button:hover {
-  background-color: rgba(240, 240, 240, 0.938);
-  transition: 0.2s ease-in-out;
-}
-
-dl {
-  padding: 20px;
-  columns: 2;
-  font-size: 0.9em;
-  background-color: rgb(240, 240, 240);
-}
-dt {
-  float: left;
-  min-width: 35%;
-}
-dd {
-  text-align: left;
-  min-width: 40%;
-  float: right;
-}
-
-/* 메뉴 카드 */
-.menu_card {
-  background-color: rgba(199, 199, 198, 0.281);
-  min-height: 350px;
-}
-.menu_card:hover .menu_card img {
-  transform: scale(1.3);
-}
-/* 푸터 */
