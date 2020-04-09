@@ -1,6 +1,5 @@
 @import url(animation.css);
 @import url(reset.css);
-@import url(media.css);
 
 /* 접근성 클래스 */
 .a11yHidden {
@@ -22,6 +21,7 @@ body {
   /* 수정: 오버플로히든 없애기 */
   font-size: 12px;
   font-family: 'Noto Sans KR', sans-serif;
+  /* scroll-behavior: smooth; */
 }
 
 .clearfix::after {
@@ -66,13 +66,8 @@ a {
 .header {
   position: fixed;
   top: 0;
-  left: 0;
-  width: 100%;
 
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  /* padding-left: 30px; */
+  width: 100vw;
   background-color: rgba(255, 255, 255, 0.425);
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
   border-bottom: solid 1px rgb(207, 207, 207);
@@ -87,8 +82,7 @@ h1 a {
   overflow: hidden;
   white-space: nowrap;
   text-indent: 200%;
-  /* padding: 25px 0; */
-  /* vertical-align: bottom; */
+
   display: block;
 
   background-image: url(../assets/logo.svg);
@@ -101,20 +95,22 @@ h1 a {
 /* 버거 버튼 */
 .burgerButton {
   /* 수정 : 플렉스로 해보기 - 지현*/
-  position: relative;
-  border: 0;
-  padding: 45px;
-  background-color: rgba(216, 191, 216, 0);
-}
+  position: absolute;
+  right: 0px;
+  top: 0;
 
+  padding: 38px 50px 38px;
+
+  background-color: rgba(216, 191, 216, 0);
+  border: 0;
+}
 .burgerButton:hover,
 .burgerButton:focus {
   background-color: rgba(211, 211, 211, 0.239);
 }
-
 .burgerButton span {
   position: absolute;
-  /* display: block; */
+
   width: 27px;
   height: 4px;
 
@@ -136,7 +132,6 @@ h1 a {
 .navigation {
   position: fixed;
   top: 0;
-  left: 0;
 
   font-size: 1.4rem;
 
@@ -192,7 +187,7 @@ h1 a {
 
 /*  */
 
-.navigation #navClBtn {
+.navigation button {
   border: none;
   background: none;
   color: white;
@@ -214,8 +209,10 @@ h1 a {
 
 /* 메인 영역 */
 .main {
-  transform: translateY(105px);
-  /* scroll-behavior: smooth; */
+  transform: translateY(80px);
+  scroll-behavior: smooth;
+
+  outline: inherit;
 }
 .mainWrapper {
   max-width: 1300px;
@@ -225,21 +222,16 @@ h1 a {
 /* 메뉴 리스트 */
 .menuList {
   margin-top: 15px;
-  margin: 0 auto;
-  /* display: flex;
+
+  display: flex;
   flex-flow: row wrap;
   justify-content: center;
-  align-items: center; */
+  align-items: center;
 }
-.main * {
-}
-.menuList figure {
-}
-/* 수정중 */
 .menuList li {
-  float: left;
-
-  /* flex: 0 1 300px; */
+  flex: 0 1 300px;
+  /* margin: 5px; */
+  /* background-color: rgb(0, 104, 52); */
 
   position: relative;
 }
@@ -255,25 +247,15 @@ h1 a {
 }
 .menuList li {
   margin: 10px;
-
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  /* height: 294px; */
-}
-.menuList li:nth-child(3) {
-  height: 326px;
 }
 
 .menuItem {
   display: block;
-  width: 100%;
-  height: 100%;
-
   /* 카드 사이 */
-  /* padding: 10px 0 20px 0;
-  margin: 10px; */
 }
 .menuItem img {
   transform: scale(0.8);

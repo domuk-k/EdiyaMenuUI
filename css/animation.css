@@ -1,0 +1,42 @@
+/* 애니메이션 */
+
+@keyframes init_slip {
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+h1 a {
+  opacity: 0;
+  transform: translateX(-20em);
+  animation: init_slip 0.55s ease-in-out 0.3s 1 forwards;
+}
+.burgerButton {
+  opacity: 0;
+  transform: translateX(20em);
+  animation: init_slip 0.55s ease-in-out 0.3s 1 forwards;
+}
+.header {
+  opacity: 0;
+  transform: translateY(-20em);
+  animation: init_slip 0.65s ease-in-out 0s 1 forwards;
+}
+
+.menuList li:nth-child(1),
+.menuList li:nth-child(2),
+.menuList li:nth-child(3),
+.menuList li:nth-child(4) {
+  opacity: 0;
+  transform: translateY(1.1em);
+  animation: init_slip 0.55s ease-in-out 0.7s 1 forwards;
+}
+
+.menuList li:nth-child(5),
+.menuList li:nth-child(6),
+.menuList li:nth-child(7),
+.menuList li:nth-child(8) {
+  opacity: 0;
+  transform: translateY(1.1em);
+  animation: init_slip 0.55s ease-in-out 0.9s 1 forwards;
+}
