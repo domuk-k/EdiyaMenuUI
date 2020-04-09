@@ -40,3 +40,11 @@ h1 a {
   transform: translateY(1.1em);
   animation: init_slip 0.55s ease-in-out 0.9s 1 forwards;
 }
+
+.menuList li:nth-child(9),
+.menuList li:nth-child(10),
+.menuList li:nth-child(11) {
+  opacity: 0;
+  transform: translateY(1.1em);
+  animation: init_slip 0.55s ease-in-out 0.9s 1 forwards;
+}
