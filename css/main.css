@@ -281,6 +281,7 @@ h1 a {
   left: 0;
   padding: 20px;
   height: 100%;
+  width: 100%;
 
   background-color: rgba(255, 255, 255, 0.507);
   border: 1px rgb(235, 235, 235) solid;

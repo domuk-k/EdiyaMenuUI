@@ -132,6 +132,20 @@ function InitEdiyaUI() {
         e.preventDefault();
         firstElm.focus();
       } else if (e.keyCode === 13) {
+        console.log('close');
+        navigation.classList.remove('isActive');
+        // 없애기
+        // navigation.setAttribute('hidden', true);
+        // 스크롤바 위치 바꾸기
+        navigation.parentElement.parentElement.style = 'overflow : inherit';
+        navOpBtn.addEventListener('click', navOpen);
+
+        Cards[0].focus();
+
+        navigation.parentElement.querySelector('.appMain').style =
+          'filter:none';
+        navigation.parentElement.querySelector('.appHeader').style =
+          'filter:none';
         // 여기서이제
         // e.preventDefault();
         // Cards[0].focus();

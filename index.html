@@ -4,8 +4,8 @@
     <!-- 메타데이터 -->
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <!-- SEO -->
     <meta
       name="description"
@@ -221,11 +221,11 @@
       </button>
     </nav>
 
-    <main class="appMain clearfix">
+    <main class="appMain">
       <section class="mainWrapper">
         <h2 class="a11yHidden">음료 메뉴</h2>
 
-        <ol class="menuList resetList">
+        <ol class="menuList resetList clearfix">
           <li>
             <h3 class="a11yHidden">ICED 벚꽃라떼</h3>
             <a
@@ -331,7 +331,7 @@
               role="button"
               tabindex="0"
               title="ICED 벚꽃라떼 상세보기"
-              aria-label="얼음이 들어간 브라우니 쇼콜라 상세보기"
+              aria-label="얼음이 들어간 브라우니 쇼콜라"
               aria-haspopup="true"
             >
               <figure>
@@ -768,7 +768,36 @@
       </section>
     </main>
     <button type="button" class="topButton" tabindex="-1">
-      <a href="#">맨 위로</a>
+      <a href="#" role="dialog" aria-label="맨 위로">맨 위로</a>
     </button>
+    <footer
+      id="a11yNotice"
+      style=" background-color: transparent; position: fixed; bottom:20px; width: 100%;"
+    >
+      <section
+        tabindex="1"
+        style="border-radius: 30px; background-color: rgb(50,41,125); margin: 0 auto; height: 90%; min-width: 30%; max-width:35%; color: white; text-align: center; "
+      >
+        <h2 class="a11yHidden">스크린 리더 사용자 안내</h2>
+        <p
+          style="line-height: 1.4em; padding:8px 0; display: inline-block; font-size: 1.2em;"
+        >
+          본 사이트는 윈도우 기본 스크린리더인 narrator에 최적화되어 있습니다.
+        </p>
+        <button
+          style="margin-left: 1.2em; background-color: white;color: black; border-radius:50px;"
+          onclick="shutdown()"
+          title="지우기"
+          id="eliminate"
+        >
+          <span role="dialog" aria-labelledby="eliminate">×</span>
+        </button>
+      </section>
+    </footer>
+    <script>
+      function shutdown() {
+        document.querySelector('#a11yNotice').style = 'visibility:hidden';
+      }
+    </script>
   </body>
 </html>
