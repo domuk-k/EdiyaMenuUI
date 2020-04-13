@@ -93,7 +93,7 @@ h1 a {
 
   display: block;
 
-  background-image: url(../assets/Logo.png);
+  background-image: url(https://i.imgur.com/cnrZDRm.png);
   background-repeat: no-repeat;
   background-size: 70%;
   background-position-y: center;
@@ -238,6 +238,9 @@ h1 a {
 .menuList {
   margin-top: 15px;
   margin: 0 auto;
+
+  display: flex;
+  flex-flow: row wrap;
 }
 
 .menuList figure {
@@ -251,11 +254,12 @@ h1 a {
 
 .menuList li {
   position: relative;
-  float: left;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+
+  flex-flow: 1 1 300px;
 }
 
 .menuItem {
