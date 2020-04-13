@@ -1,0 +1,66 @@
+/*
+Icon classes can be used entirely standalone. They are named after their original file names.
+
+Example usage in HTML:
+
+`display: block` sprite:
+<div class="icon-home"></div>
+
+To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+
+// CSS
+.icon {
+  display: inline-block;
+}
+
+// HTML
+<i class="icon icon-home"></i>
+*/
+.icon-02_Ice_Cherry_Blossom_Latte {
+  background-image: url(sp_all.png);
+  background-position: -416px 0px;
+  width: 204px;
+  height: 294px;
+}
+.icon-02_hot_Cherry_Blossom_Latte {
+  background-image: url(sp_all.png);
+  background-position: -208px 0px;
+  width: 204px;
+  height: 294px;
+}
+.icon-03_Ice_Brownie_Chocolate {
+  background-image: url(sp_all.png);
+  background-position: 0px 0px;
+  width: 204px;
+  height: 295px;
+}
+.icon-04_Hot_Brownie_Chocolate {
+  background-image: url(sp_all.png);
+  background-position: 0px -299px;
+  width: 204px;
+  height: 294px;
+}
+.icon-05_Jeju_Green_Tangerine_Tea {
+  background-image: url(sp_all.png);
+  background-position: -208px -299px;
+  width: 204px;
+  height: 294px;
+}
+.icon-06_Jeju_Green_Tangerine_Blossom {
+  background-image: url(sp_all.png);
+  background-position: -416px -299px;
+  width: 204px;
+  height: 294px;
+}
+.icon-07_Pomegranate_Tea {
+  background-image: url(sp_all.png);
+  background-position: -624px 0px;
+  width: 204px;
+  height: 294px;
+}
+.icon-08_Pomegranate_Apple_Lime {
+  background-image: url(sp_all.png);
+  background-position: -624px -298px;
+  width: 204px;
+  height: 294px;
+}
