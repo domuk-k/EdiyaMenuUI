@@ -12,6 +12,7 @@ function InitEdiyaUI() {
   let firstElm = null;
   let lastElm = null;
   let details = null;
+
   // UI 인터랙션 초기화
   const init = function() {
     // 문서 객체를 찾아 지역 변수에 참조하는 함수 실행
