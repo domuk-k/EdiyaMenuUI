@@ -238,6 +238,9 @@ h1 a {
 .menuList {
   margin-top: 15px;
   margin: 0 auto;
+
+  display: flex;
+  flex-flow: row wrap;
 }
 
 .menuList figure {
@@ -251,11 +254,12 @@ h1 a {
 
 .menuList li {
   position: relative;
-  float: left;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+
+  flex-flow: 1 1 300px;
 }
 
 .menuItem {
